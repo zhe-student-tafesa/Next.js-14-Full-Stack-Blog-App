@@ -2,3 +2,6 @@
 #  "next": "14.0.4"
 # npx create-next-app@14.0.4 .
 # npm run dev 
+# rafce
+# router: dynamic router: [], group router: ()
+
