@@ -23,7 +23,7 @@ a {
 }
 
 .container {
-    background-color: purple;
+    /* background-color: purple; */
     width: 1536px;
     margin: auto;
     padding-left: 50px;
