@@ -4,4 +4,5 @@
 # npm run dev 
 # rafce
 # router: dynamic router: [], group router: ()
+# 1. !! use   **.module.css to prevent css conflict;!!
 
