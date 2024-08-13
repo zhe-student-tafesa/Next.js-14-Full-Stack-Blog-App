@@ -26,7 +26,7 @@ const Links = () => {
     const session = true;
     const isAdmin = true;
     return (
-        <div className={styles.container}>
+        <div className={styles.links}>
             {links.map((link) =>
                 <NavLink link={link} key={link.title} />
             )}{
