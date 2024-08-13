@@ -29,6 +29,7 @@ const Links = () => {
     const [open, setOpen] = useState(false);
     return (
         <div className={styles.container}>
+            {/* FOR DESK TOP: Begin */}
             <div className={styles.links}>
                 {links.map((link) =>
                     <NavLink link={link} key={link.title} />
@@ -42,6 +43,9 @@ const Links = () => {
                         : (<NavLink link={{ title: "Login", path: "/login" }} />)
                 }
             </div>
+            {/* FOR DESK TOP: End */}
+
+            {/* FOR TABLET AND MOBILE TOP: Begin */}
             <button className={styles.mobileMenuButton} onClick={() => setOpen((prev) => !prev)}>Menu</button>
             {open && <div className={styles.mobileLinks}>
                 {
@@ -50,6 +54,7 @@ const Links = () => {
                     )
                 }
             </div>
+            //  FOR TABLET AND MOBILE TOP: Begin 
             }
         </div>
     )

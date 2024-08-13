@@ -12,6 +12,7 @@
 
 .container {}
 
+/* TABLET AND MOBILE: Hide */
 .mobileMenuButton,
 .mobileLinks {
     display: none;
@@ -19,16 +20,16 @@
 
 @media (max-width: 768px) {
 
-    /* hide desk top menu */
+    /* Hide desk top menu */
     .links {
         display: none;
     }
-
+    /* TABLET AND MOBILE: show */
     .mobileMenuButton {
         display: block;
         cursor: pointer;
     }
-
+    /* TABLET AND MOBILE: show */
     .mobileLinks {
         position: absolute;
         top: 100px;

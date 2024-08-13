@@ -35,6 +35,8 @@ a {
     justify-content: space-between;
 }
 
+
+/* most outside container: add media QUERY: begin */
 @media (max-width: 1536px) {
     .container {
         width: 1366px;
@@ -78,3 +80,4 @@ a {
         width: 380px;
     }
 }
+/* most outside container: add media QUERY: END */
