@@ -15,6 +15,11 @@
     height: 500px;
 }
 
+    /* keep the right ratio */
+    .heroImage {
+        object-fit: contain;
+    }
+
 
 
 .heading {
@@ -61,10 +66,6 @@
     /* must have, or the image will not show */
     .imagecontainer {
         min-height: 300px;
-    }
-    /* keep the right ratio */
-    .heroimage {
-        object-fit: contain;
     }
   
     .buttons{

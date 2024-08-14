@@ -16,7 +16,7 @@ const Home = () => {
 
     </div>
     <div className={styles.imagecontainer}>
-      <Image className={styles.heroimage} src="/hero.gif" alt='' fill />
+      <Image className={styles.heroImage} src="/hero.gif" alt='' fill />
     </div>
   </div>;
 };
