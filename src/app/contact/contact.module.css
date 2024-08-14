@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+}
+
+/* if img is on the left, we must give height */
+.imgContainer {
+    position: relative;
+    flex: 1;
+    height: 500px;
+}
+
+.formContainer {
+    flex: 1;
+
+}
+
+.img {
+    object-fit: contain;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input,
+.form textarea {
+    padding: 20px;
+    /* height: 40px; */
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--bgSoft);
+    color: var(--text);
+}
+
+.form button {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--btn);
+    color: var(--text);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgContainer {
+        min-height: 400px;
+    }
+
+    .img {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
