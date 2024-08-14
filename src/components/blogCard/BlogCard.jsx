@@ -15,8 +15,8 @@ const BlogCard = () => {
             <div className={styles.bottom}>
                 <h3 className={styles.title}>Title</h3>
                 <p className={styles.desc}>Are rice salads really that healthy or not? This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). </p>
-            </div>
-            <Link href="/blog/post" className={styles.link}>READ MORE</Link>
+                <Link href="/blog/post" className={styles.link}>READ MORE</Link>
+           </div>  
         </div>
     )
 }
