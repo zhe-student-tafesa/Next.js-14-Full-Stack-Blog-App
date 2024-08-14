@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    gap: 100px;
+}
+
+.imgContainer {
+    flex: 1;
+    position: relative;
+    min-height: calc(100vh - 200px);
+}
+
+.textContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.detailContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.imgFeatured {
+    object-fit: contain;
+}
+
+.title {
+    font-size: 64px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.detailTitle {
+    color: gray;
+    font-weight: bold;
+}
+
+.detailValue {
+    font-weight: 500;
+}
+
+.desc {
+    font-size: 20px;
+}
+
+@media (max-width:768px) {
+    .imgContainer {
+        display: none;
+    }
+}
