@@ -13,17 +13,17 @@ const AboutPage = () => {
           Special Team best consulting & finance solution provider. Wide range
           of web and software development services.</p>
         <div className={styles.boxes}>
-           <div className={styles.box}>
-              <h2 className={styles.boxNunber}>10+</h2>
-              <p className={styles.boxDesc}>Year of experience</p>
+          <div className={styles.box}>
+            <h2 className={styles.boxNunber}>10+</h2>
+            <p className={styles.boxDesc}>Year of experience</p>
           </div>
           <div className={styles.box}>
-              <h2 className={styles.boxNunber}>10+</h2>
-              <p className={styles.boxDesc}>Year of experience</p>
+            <h2 className={styles.boxNunber}>324K+</h2>
+            <p className={styles.boxDesc}>People reached</p>
           </div>
           <div className={styles.box}>
-              <h2 className={styles.boxNunber}>10+</h2>
-              <p className={styles.boxDesc}>Year of experience</p>
+            <h2 className={styles.boxNunber}>5K+</h2>
+            <p className={styles.boxDesc}>Services and plugins</p>
           </div>
         </div>
       </div>

@@ -15,16 +15,18 @@
     position: relative;
 
 }
+
 /* set contain: !!! NOT in imagecontainer */
-.aboutImage {     
+.aboutImage {
     object-fit: contain;
 }
 
 
 
 .subheading {
-     color: var(--btn);
+    color: var(--btn);
 }
+
 .heading {
     font-size: 54px;
 }
@@ -40,7 +42,7 @@
     align-items: center;
     /* justify-content  justify-content  justify-content */
     justify-content: space-between;
-    
+
 }
 
 .box {
@@ -49,7 +51,8 @@
     gap: 10px;
     cursor: pointer;
 }
- /* or use .boxNunber as selector */
+
+/* or use .boxNunber as selector */
 .box h2 {
     font-size: 35px;
     color: var(--btn);
@@ -58,19 +61,20 @@
 
 @media (max-width: 1024px) {
     .container {
-      flex-direction: column;
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
+
     /* must have, or the image will not show */
     .imagecontainer {
         min-height: 300px;
     }
 
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .heading {
-      font-size: 44px;
+        font-size: 44px;
     }
 
-  }
+}
