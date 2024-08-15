@@ -76,5 +76,9 @@
     .heading {
         font-size: 44px;
     }
+    .boxes {
+        flex-direction: column;
+        gap: 50px;
+    }
 
 }
