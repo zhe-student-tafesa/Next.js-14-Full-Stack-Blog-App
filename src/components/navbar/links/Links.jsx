@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import styles from './links.module.css'
 import NavLink from './navLink/NavLink';
+import Image from 'next/image';
 
 const links = [
     {
@@ -46,7 +47,11 @@ const Links = () => {
             {/* FOR DESK TOP: End */}
 
             {/* FOR TABLET AND MOBILE TOP: Begin */}
-            <button className={styles.mobileMenuButton} onClick={() => setOpen((prev) => !prev)}>Menu</button>
+            {/* <button className={styles.mobileMenuButton} onClick={() => setOpen((prev) => !prev)}>Menu</button> */}
+            <Image src='/menu.png' alt='menu' width={30} height={30}
+                onClick={() => setOpen((prev) => !prev)}
+                className={styles.mobileMenuButton}
+            />
             {open && <div className={styles.mobileLinks}>
                 {
                     links.map((link) =>
@@ -54,7 +59,7 @@ const Links = () => {
                     )
                 }
             </div>
-            //  FOR TABLET AND MOBILE TOP: Begin 
+                //  FOR TABLET AND MOBILE TOP: Begin 
             }
         </div>
     )
