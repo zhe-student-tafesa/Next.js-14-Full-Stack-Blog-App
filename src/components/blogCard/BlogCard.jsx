@@ -3,7 +3,7 @@ import styles from './blogCard.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const BlogCard = () => {
+const BlogCard = ({ post }) => {
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -13,10 +13,10 @@ const BlogCard = () => {
                 <span className={styles.date}>12.31.2024</span>
             </div>
             <div className={styles.bottom}>
-                <h3 className={styles.title}>Title</h3>
-                <p className={styles.desc}>Are rice salads really that healthy or not? This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). </p>
-                <Link href="/blog/post" className={styles.link}>READ MORE</Link>
-           </div>  
+                <h3 className={styles.title}>{post.title}</h3>
+                <p className={styles.desc}>{post.body}</p>
+                <Link href={`/blog/${post.id}`} className={styles.link}>READ MORE</Link>
+            </div>
         </div>
     )
 }
