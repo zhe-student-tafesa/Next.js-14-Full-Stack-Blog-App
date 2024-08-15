@@ -7,7 +7,7 @@ const SingleBlogPage = () => {
     <div className={styles.container}>
 
       <div className={styles.imgContainer}>
-        <Image src='https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg' className={styles.imgFeatured} fill />
+        <Image src='https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg' className={styles.imgFeatured} alt='' fill />
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>Title</h1>

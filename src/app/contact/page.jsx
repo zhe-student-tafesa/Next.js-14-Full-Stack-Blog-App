@@ -3,10 +3,11 @@ import styles from "./contact.module.css";
 import Image from 'next/image';
 
 const ContactPage = () => {
+  // console.log('it works here')
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image className={styles.img} src='/contact.png' fill />
+        <Image className={styles.img} src='/contact.png' alt='' fill />
       </div>
       <div className={styles.formContainer}>
         <form className={styles.form} action=''>
