@@ -28,7 +28,9 @@ const AboutPage = () => {
         </div>
       </div>
       <div className={styles.imagecontainer}>
-        <Image className={styles.aboutImage} src="/about.png" alt='' fill />
+        <Image className={styles.aboutImage} src="/about.png" 
+         alt='' fill sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
     </div>
   );

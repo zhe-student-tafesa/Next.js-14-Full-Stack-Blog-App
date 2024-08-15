@@ -7,7 +7,9 @@ const ContactPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image className={styles.img} src='/contact.png' alt='' fill />
+        <Image className={styles.img} src='/contact.png' alt='' fill 
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className={styles.formContainer}>
         <form className={styles.form} action=''>
