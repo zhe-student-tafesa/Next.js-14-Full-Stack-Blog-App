@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./blog.module.css";
 import BlogCard from "@/components/blogCard/BlogCard";
+import { getPosts } from "@/lib/data";
 
 const getData = async () => {
   // use cache:  {cache: "force-cache"} : DEFAULT
@@ -16,7 +17,11 @@ const getData = async () => {
 };
 
 const BlogPage = async () => {
-  const posts = await getData();
+  // use API to fetch data
+  // const posts = await getData();
+
+  // !!! use DATA.js to fetch data
+  const posts = await getPosts();
   // console.log(posts)
   return (
     <div className={styles.container}>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./singleblog.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/PostUser";
+import { getPost } from "@/lib/data";
 
 const getData = async (slug) => {
   //console.log('https://jsonplaceholder.typicode.com/posts/'+slug)
@@ -17,9 +18,13 @@ const getData = async (slug) => {
 const SingleBlogPage = async ({ params }) => {
   // !!! {slug} = params;
   const { slug } = params;
-  const post = await getData(slug);
-  // console.log(slug)
-  //console.log(post)
+
+  // use API to fetch data
+  // const post = await getData(slug);
+
+  // use DATA.js to fetch data
+  const post = await getPost(slug);
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -40,7 +45,10 @@ const SingleBlogPage = async ({ params }) => {
             height={50}
             alt=""
           />
-          <PostUser userId={post.userId} />
+          <Suspense fallback={<div>Loading......</div>}>
+            <PostUser userId={post.userId} />
+          </Suspense>
+
           <div className={styles.detail}>
             <p className={styles.detailTitle}>Published</p>
             <p className={styles.detailValue}>detail Value2</p>
