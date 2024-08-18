@@ -24,6 +24,8 @@ const SingleBlogPage = async ({ params }) => {
 
   // use DATA.js to fetch data
   const post = await getPost(slug);
+  // console.log(post.userId);
+  // console.log(slug);
 
   return (
     <div className={styles.container}>

@@ -19,7 +19,7 @@ const PostUser = async ({ userId }) => {
 
   // !!! use DATA.js to fetch data
   const user = await getUser(userId);
-  //   console.log(user);
+  console.log(user);
   return (
     <div className={styles.container}>
       <p className={styles.detailTitle}>Author</p>

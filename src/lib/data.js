@@ -110,7 +110,9 @@ export const getPost = async (slug) => {
     // return posts.find((post) => post.id == parseInt(slug));
     try {
         connectToDB();
-        const post = await Post.findOne(slug);
+        // The findOne() method is used to find the first document that meets the query criteria. Mongoose will query based on the key-value pairs in the object you pass in.
+        // Post.findOne({ slug: slug }) SAME WITH Post.findOne({ slug })
+        const post = await Post.findOne({ slug: slug });
         return post;
     } catch (error) {
         console.log(error, 'fail to fetch post')
@@ -121,7 +123,9 @@ export const getUser = async (userId) => {
     //return users.find((user) => user.id == parseInt(userId));
     try {
         connectToDB();
-        const user = await User.findOne(userId);
+        // findById can receive an ObjectId of string type, and it will automatically convert the string to ObjectId type for query.
+        //const user = await User.findById(userId);
+        const user = await User.findOne({ _id: userId });
         return user;
     } catch (error) {
         console.log(error, 'fail to fetch user')
