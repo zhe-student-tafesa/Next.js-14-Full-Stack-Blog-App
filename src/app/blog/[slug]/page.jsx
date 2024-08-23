@@ -31,7 +31,7 @@ const SingleBlogPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"
+          src= {post.img?post.img:"https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"}
           className={styles.imgFeatured}
           alt=""
           fill
@@ -53,7 +53,7 @@ const SingleBlogPage = async ({ params }) => {
 
           <div className={styles.detail}>
             <p className={styles.detailTitle}>Published</p>
-            <p className={styles.detailValue}>detail Value2</p>
+            <p className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</p>
           </div>
         </div>
 

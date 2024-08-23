@@ -11,7 +11,7 @@ const BlogCard = ({ post }) => {
           <Image
             className={styles.img}
             alt=""
-            src="https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"
+            src= {post.img? post.img:"https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"}
             fill
           />
         </div>
