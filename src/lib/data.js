@@ -18,6 +18,7 @@
 //     "body": "illum quis cupiditate provident sit magnam\nea sed aut omnis\nveniam maiores ullam consequatur atque\nadipisci quo iste expedita sit quos voluptas"
 // }
 
+import { unstable_noStore } from "next/cache";
 import { Post, User } from "./models";
 import { connectToDB } from "./utils";
 
@@ -121,6 +122,7 @@ export const getPost = async (slug) => {
 
 export const getUser = async (userId) => {
     //return users.find((user) => user.id == parseInt(userId));
+    unstable_noStore();
     try {
         connectToDB();
         // findById can receive an ObjectId of string type, and it will automatically convert the string to ObjectId type for query.
