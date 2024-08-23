@@ -1,5 +1,11 @@
 .container {
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.containerUserRight {
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
@@ -10,4 +16,7 @@
 
 .detailValue {
     font-weight: 500;
+}
+.avatar {
+    border-radius: 50%;
 }

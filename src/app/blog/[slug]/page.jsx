@@ -40,13 +40,7 @@ const SingleBlogPage = async ({ params }) => {
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detailContainer}>
-          <Image
-            src="https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"
-            className={styles.avatar}
-            width={50}
-            height={50}
-            alt=""
-          />
+
           <Suspense fallback={<div>Loading......</div>}>
             <PostUser userId={post.userId} />
           </Suspense>

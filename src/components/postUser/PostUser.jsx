@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./postUser.module.css";
 import { getUser } from "@/lib/data";
+import Image from "next/image";
 
 const getData = async (id) => {
   const result = await fetch(
@@ -19,11 +20,20 @@ const PostUser = async ({ userId }) => {
 
   // !!! use DATA.js to fetch data
   const user = await getUser(userId);
-  console.log(user);
+  // console.log(user);
   return (
     <div className={styles.container}>
-      <p className={styles.detailTitle}>Author</p>
-      <p className={styles.detailValue}>{user.username}</p>
+      <Image
+        src={user.img? user.img : "/noavatar.png"}
+        className={styles.avatar}
+        width={50}
+        height={50}
+        alt=""
+      />
+      <div className={styles.containerUserRight}>
+        <span className={styles.detailTitle}>Author</span>
+        <span className={styles.detailValue}>{user.username}</span>
+      </div>
     </div>
   );
 };
