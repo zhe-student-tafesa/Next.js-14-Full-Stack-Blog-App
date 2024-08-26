@@ -60,7 +60,7 @@ const SingleBlogPage = async ({ params }) => {
           </div>
         </div>
 
-        <p className={styles.desc}>{post.body}</p>
+        <p className={styles.desc}>{post.desc}</p>
       </div>
     </div>
   );
