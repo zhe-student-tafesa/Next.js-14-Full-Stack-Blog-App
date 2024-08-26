@@ -15,6 +15,15 @@ const getData = async (slug) => {
   return result.json();
 };
 
+export const generateMetadata = async ({ params }) => {
+  const { slug } = params;
+  const post = await getPost(slug);
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+}
+
 const SingleBlogPage = async ({ params }) => {
   // !!! {slug} = params;
   const { slug } = params;
@@ -31,7 +40,7 @@ const SingleBlogPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src= {post.img?post.img:"https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"}
+          src={post.img ? post.img : "https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"}
           className={styles.imgFeatured}
           alt=""
           fill
@@ -47,7 +56,7 @@ const SingleBlogPage = async ({ params }) => {
 
           <div className={styles.detail}>
             <p className={styles.detailTitle}>Published</p>
-            <p className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</p>
+            <p className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</p>
           </div>
         </div>
 
