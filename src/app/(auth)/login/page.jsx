@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./login.module.css";
 
 export const metadata = {
-  title: 'Login Page | NextJS 14 Fullstack Blog',
+  title: 'Login Page',
   description: 'Login Page Description',
 }
 

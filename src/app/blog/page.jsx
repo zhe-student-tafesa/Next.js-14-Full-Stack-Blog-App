@@ -17,7 +17,7 @@ const getData = async () => {
 };
 
 export const metadata = {
-  title: 'Blog Page | NextJS 14 Fullstack Blog',
+  title: 'Blog Page',
   description: 'Blog Page Description',
 }
 

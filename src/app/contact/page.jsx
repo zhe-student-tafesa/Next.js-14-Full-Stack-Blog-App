@@ -3,7 +3,7 @@ import styles from "./contact.module.css";
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Contact Page | NextJS 14 Fullstack Blog',
+  title: 'Contact Page',
   description: 'Contact Page Description',
 }
 
