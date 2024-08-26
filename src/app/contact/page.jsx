@@ -2,6 +2,11 @@ import React from 'react'
 import styles from "./contact.module.css";
 import Image from 'next/image';
 
+export const metadata = {
+  title: 'Contact Page | NextJS 14 Fullstack Blog',
+  description: 'Contact Page Description',
+}
+
 const ContactPage = () => {
   // console.log('it works here')
   return (

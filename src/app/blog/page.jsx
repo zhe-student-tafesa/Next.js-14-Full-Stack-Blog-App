@@ -16,6 +16,11 @@ const getData = async () => {
   return result.json();
 };
 
+export const metadata = {
+  title: 'Blog Page | NextJS 14 Fullstack Blog',
+  description: 'Blog Page Description',
+}
+
 const BlogPage = async () => {
   // use API to fetch data
   // const posts = await getData();
