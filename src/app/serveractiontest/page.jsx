@@ -1,4 +1,4 @@
-import { createPost } from '@/lib/action'
+import { createPost, deletePost } from '@/lib/action'
 import React from 'react'
 
 const ServeraAtionTestPage = () => {
@@ -10,6 +10,11 @@ const ServeraAtionTestPage = () => {
         <input type='text' name='userId' placeholder='userId' ></input>
         <input type='text' name='slug' placeholder='slug' ></input>
         <button>Create Post</button>
+      </form>
+
+      <form action={deletePost}>
+        <input type='text' placeholder='id' name='id'></input>
+        <button>Delete Post</button>
       </form>
     </div>
   )

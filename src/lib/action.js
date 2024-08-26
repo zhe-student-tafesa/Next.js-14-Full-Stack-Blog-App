@@ -29,3 +29,16 @@ export const createPost = async (formData) => {
 
     //console.log(title, desc, userId, slug );
 }
+
+export const deletePost = async (formData) => {
+    'use server'
+    const { id } = Object.fromEntries(formData);
+    connectToDB()
+    try {
+        await Post.findByIdAndDelete(id)
+        console.log('Delete from DB');
+        revalidatePath('/blog')
+    } catch (error) {
+        console.log(error);
+    }
+}
