@@ -16,6 +16,16 @@ const getData = async () => {
   return result.json();
 };
 
+const getDataUseOurAPI = async () => {
+  const result = await fetch("http://localhost:3000/api/blog", {
+    cache: "force-cache",
+  });
+  if (!result.ok) {
+    throw new Error("error in blog page fetching data use own API");
+  }
+  return result.json();
+};
+
 export const metadata = {
   title: 'Blog Page',
   description: 'Blog Page Description',
@@ -24,9 +34,10 @@ export const metadata = {
 const BlogPage = async () => {
   // use API to fetch data
   // const posts = await getData();
+  const posts = await getDataUseOurAPI()
 
   // !!! use DATA.js to fetch data
-  const posts = await getPosts();
+  //  const posts = await getPosts();
   // console.log(posts)
   return (
     <div className={styles.container}>
