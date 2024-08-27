@@ -15,6 +15,16 @@ const getData = async (slug) => {
   return result.json();
 };
 
+const getDataUsingOwnAPI = async (slug) => {
+  const result = await fetch(
+    "http://localhost:3000/api/blog/" + slug
+  );
+  if (!result.ok) {
+    throw new Error("error in single blog page fetching data");
+  }
+  return result.json();
+};
+
 export const generateMetadata = async ({ params }) => {
   const { slug } = params;
   const post = await getPost(slug);
@@ -32,9 +42,11 @@ const SingleBlogPage = async ({ params }) => {
   // const post = await getData(slug);
 
   // use DATA.js to fetch data
-  const post = await getPost(slug);
+  //const post = await getPost(slug);
   // console.log(post.userId);
   // console.log(slug);
+
+  const post = await getDataUsingOwnAPI(slug);
 
   return (
     <div className={styles.container}>
