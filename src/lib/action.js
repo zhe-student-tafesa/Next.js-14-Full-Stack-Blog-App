@@ -1,6 +1,6 @@
 'use server' // in Action
 import { revalidatePath } from "next/cache";
-import { Post } from "./models";
+import { Post, User } from "./models";
 import { connectToDB } from "./utils";
 import { signIn, signOut } from "./auth";
 
@@ -52,4 +52,31 @@ export const handleLogin = async () => {
 
 export const handleLogout = async () => {
     await signOut()
+}
+
+export const handleRegister = async (formData) => {
+    const { username, email, password, passwordrepeat, img } = Object.fromEntries(formData);
+    if (password != passwordrepeat) {
+        return 'password not match'
+    }
+    try {
+        // if existed user
+        const user = await User.findOne({ username: username })
+        if (user) {
+            return 'account alread exist';
+        }
+        // Register
+        const newUser = new User({
+            username: username,
+            password,
+            img,
+            email,
+        });
+        await newUser.save();
+        return 'register success'
+    } catch (error) {
+        console.log(error)
+        return 'register failed'
+    }
+
 }
