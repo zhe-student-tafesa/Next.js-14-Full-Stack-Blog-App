@@ -1,6 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { Post } from "./models";
 import { connectToDB } from "./utils";
+import { signIn } from "./auth";
 
 export const createPost = async (formData) => {
     'use server'
@@ -41,4 +42,9 @@ export const deletePost = async (formData) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+export const handleLogin = async () => {
+    'use server' // in Action
+    await signIn("github")
 }

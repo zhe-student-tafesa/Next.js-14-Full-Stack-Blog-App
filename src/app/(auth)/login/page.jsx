@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./login.module.css";
-import { auth, signIn } from '@/lib/auth';
+import { auth } from '@/lib/auth';
+import { handleLogin } from '@/lib/action';
 
 
 export const metadata = {
@@ -9,13 +10,10 @@ export const metadata = {
 }
 
 const LoginPage = async () => {
-  const session = await auth()
-  console.log(session)
 
-  const handleLogin = async () => {
-    'use server' // in Action
-    await signIn("github")
-  }
+  // const session = await auth()
+  // console.log(session)
+
   return (
     <div>
       <form action={handleLogin}>
