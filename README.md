@@ -12,5 +12,6 @@
 # https://github.com/settings/applications/2685719
 # http://localhost:3000/api/auth/signin: "Bad request."
 # https://github.com/kelektiv/node.bcrypt.js
+# SignIn with credentials
 
 

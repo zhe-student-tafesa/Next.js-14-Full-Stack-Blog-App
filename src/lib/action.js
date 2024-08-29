@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { Post, User } from "./models";
 import { connectToDB } from "./utils";
 import { signIn, signOut } from "./auth";
-import bcrypt from "bcryptjs/dist/bcrypt";
+import bcrypt from "bcryptjs";
 
 export const createPost = async (formData) => {
     'use server'
@@ -83,3 +83,21 @@ export const handleRegister = async (formData) => {
     }
 
 }
+
+
+export const handleLoginWithCredentials = async (formData) => {
+    const { username, password } = Object.fromEntries(formData);
+
+    try {
+        /// Call: signIn with credentials
+        /// signIn with credentials
+        /// signIn with credentials
+
+        await signIn('credentials', { username, password });
+    } catch (error) {
+        console.log(error)
+        return 'login failed'
+    }
+
+}
+
