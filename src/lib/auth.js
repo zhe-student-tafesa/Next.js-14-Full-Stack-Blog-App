@@ -4,6 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { connectToDB } from "./utils"
 import { User } from "./models"
 import bcrypt from "bcryptjs"
+import { authConfig } from "./auth.config"
 // create a new GitHub App
 export const {
     handlers: { GET, POST },
@@ -11,6 +12,10 @@ export const {
     signIn,
     signOut
 } = NextAuth({
+
+    // use authConfig
+    ...authConfig,
+    // providers in this file will overwrite providers in authConfig
     providers: [
         GitHub({
             clientId: process.env.AUTH_GITHUB_ID,
@@ -52,12 +57,15 @@ export const {
                 }
             }
             //add Error check!!
-            if(user?.error){
+            if (user?.error) {
                 return false;
-            }   
+            }
             return true;
         }
-    }
+        // write authorized callback function
+    },
+    // use authConfig.callbacks  overwrite callbacks in this file
+    ...authConfig.callbacks
 })
 
 const login = async (credentials) => {
@@ -67,14 +75,14 @@ const login = async (credentials) => {
         const user = await User.findOne({ username: credentials.username })
         if (!user) {
             //throw new Error('account not exist')
-            return {error: 'Account not exist'}
+            return { error: 'Account not exist' }
         }
         // compare
         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
         console.log("isPasswordCorrect: ", isPasswordCorrect)
         if (!isPasswordCorrect) {
             //throw new Error('Credentials not correct')
-            return {error: 'Credentials are not correct'}
+            return { error: 'Credentials are not correct' }
         }
         return user;
     } catch (error) {
