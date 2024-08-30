@@ -8,5 +8,11 @@
 # Free fake data: https://jsonplaceholder.typicode.com/posts
 # https://mongoosejs.com/docs/connections.html
 # Schema and models: https://mongoosejs.com/docs/models.html
+# https://authjs.dev/reference/nextjs
+# https://github.com/settings/applications/2685719
+# http://localhost:3000/api/auth/signin: "Bad request."
+# https://github.com/kelektiv/node.bcrypt.js
+# SignIn with credentials
+# useFormState: https://fa.react.dev/reference/react-dom/hooks/useFormState, handle form error
 
 
