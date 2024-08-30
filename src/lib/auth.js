@@ -51,6 +51,10 @@ export const {
                     return false;
                 }
             }
+            //add Error check!!
+            if(user?.error){
+                return false;
+            }   
             return true;
         }
     }

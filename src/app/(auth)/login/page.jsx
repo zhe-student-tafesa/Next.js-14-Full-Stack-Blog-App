@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./login.module.css";
 import { auth } from '@/lib/auth';
 import { handleLogin, handleLoginWithCredentials } from '@/lib/action';
+import LoginForm from '@/components/loginForm/LoginForm';
 
 
 export const metadata = {
@@ -9,21 +10,19 @@ export const metadata = {
   description: 'Login Page Description',
 }
 
-const LoginPage = async () => {
+const LoginPage = () => {
 
   // const session = await auth()
   // console.log(session)
 
   return (
-    <div>
-      <form action={handleLoginWithCredentials}>
-        <input type='text' name='username' placeholder='User Name'></input>
-        <input type='password' name='password' placeholder='Password'></input>
-        <button>Login with Credentials</button>
-      </form>
-      <form action={handleLogin}>
-        <button>Login with Github</button>
-      </form>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <form action={handleLogin}>
+          <button className={styles.githubbutton}>Login with Github</button>
+        </form>
+        <LoginForm />
+      </div>
     </div>
   )
 }
