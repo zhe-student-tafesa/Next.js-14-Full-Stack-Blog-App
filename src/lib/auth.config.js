@@ -9,12 +9,8 @@ export const authConfig = {
         // Begin: add user info inside this session 
         /// update token
         async jwt({ token, user }) {
-            console.log("user000: ", user)
-            if(user){
-                console.log("user123: ", user)
-                token.id = user.id;
-                token.isAdmin= user.isAdmin;
-            }
+            token.id = token.sub;
+            token.isAdmin = token.email === process.env.ADMIN_ACCOUNT? true : false;
             return token;
         },
         /// use updated token: update session
