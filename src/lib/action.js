@@ -61,6 +61,7 @@ export const handleRegister = async (previousState, formData) => {
         return { error: 'Password not match' }
     }
     try {
+        connectToDB()
         // if existed user
         const user = await User.findOne({ username: username })
         if (user) {
