@@ -28,7 +28,14 @@
     .containerPost {
         flex-direction: column;
     }
+
     .containerUser {
         flex-direction: column;
     }
+}
+
+/* class + tag: selector */
+.container img {
+    object-fit: cover;
+    border-radius: 50%;
 }

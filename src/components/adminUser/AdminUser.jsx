@@ -15,11 +15,11 @@ const AdminUser = async () => {
       {users.map((user) => (
         <form key={user.id} className={styles.containerOneUser} action={deleteUser}>
           <input type="text" name="id" value={user.id} className={styles.input} readOnly></input>
-          <div>
+          <div className={styles.imgAndName}>
             <Image src={user?.img ? user?.img : '/noavatar.png'} alt="" width={50} height={50} />
             <span>{user.username}</span>
           </div>
-          <button>delete</button>
+          <button className={styles.button}>delete</button>
         </form>
       ))}
     </div>

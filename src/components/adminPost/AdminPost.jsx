@@ -15,11 +15,11 @@ const AdminPost = async () => {
       {posts.map((post) => (
         <form key={post.id} className={styles.containerOnePost} action={deletePost}>
           <input type="text" name="id" value={post.id} className={styles.input} readOnly></input>
-          <div>
+          <div className={styles.imgAndTitle}>
             <Image src={post?.img ? post?.img : '/noavatar.png'} alt="" width={50} height={50} />
             <span>{post.title}</span>
           </div>
-          <button>delete</button>
+          <button className={styles.button}>delete</button>
         </form>
       ))}
     </div>
