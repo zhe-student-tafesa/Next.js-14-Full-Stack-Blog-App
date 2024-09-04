@@ -1,3 +1,10 @@
-.container {
-    background-color: yellow; 
- }
+.container {}
+
+.containerOneUser {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input {
+    display: none;
+}

@@ -5,6 +5,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'staging.miningskills.com.au'
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com'
             }
         ]
     }
