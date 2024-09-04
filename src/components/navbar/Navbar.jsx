@@ -10,7 +10,7 @@ const Navbar = async () => {
   if (session?.user) {
     session.user.isAdmin = session?.user?.email === process.env.ADMIN_ACCOUNT;
   }
-  console.log("page session isAdmin", session)
+  // console.log("page session isAdmin", session)
 
   return (
     <div className={styles.container}>

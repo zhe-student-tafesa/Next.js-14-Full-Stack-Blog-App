@@ -10,7 +10,7 @@ const deletePostUseOwnAPI = async (slug) => {
             throw new Error('Failed to delete post');
         }
         const result = await response.json();
-        console.log(result); //  “Post deleted successfully”
+        // console.log(result); //  “Post deleted successfully”
     } catch (error) {
         console.error('Error deleting post:', error);
     }

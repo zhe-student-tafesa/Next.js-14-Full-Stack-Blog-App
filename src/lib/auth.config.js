@@ -17,7 +17,6 @@ export const authConfig = {
         /// use updated token: update session
         async session({ session, token }) {
             if (token) {
-
                 session.user.id = token.id;
                 session.user.isAdmin = token.isAdmin;
             }
@@ -26,7 +25,7 @@ export const authConfig = {
         },
         // End: add user info inside this session 
         authorized({ auth, request }) {
-            console.log("auth1017: ", auth)
+            // console.log("auth1017: ", auth)
             const user = auth?.user;
             const isOnAdminPanel = request.nextUrl?.pathname.startsWith('/admin')
             const isOnBlogPage = request.nextUrl?.pathname.startsWith('/blog')
