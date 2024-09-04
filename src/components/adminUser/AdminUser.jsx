@@ -14,7 +14,7 @@ const AdminUser = async () => {
       <h1>Users</h1>
       {users.map((user) => (
         <form key={user.id} className={styles.containerOneUser} action={deleteUser}>
-          <input type="text" name="id" value={user.id} className={styles.input}></input>
+          <input type="text" name="id" value={user.id} className={styles.input} readOnly></input>
           <div>
             <Image src={user?.img ? user?.img : '/noavatar.png'} alt="" width={50} height={50} />
             <span>{user.username}</span>

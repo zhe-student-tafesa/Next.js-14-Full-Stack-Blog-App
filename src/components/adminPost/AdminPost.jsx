@@ -14,7 +14,7 @@ const AdminPost = async () => {
       <h1>Posts</h1>
       {posts.map((post) => (
         <form key={post.id} className={styles.containerOnePost} action={deletePost}>
-          <input type="text" name="id" value={post.id} className={styles.input}></input>
+          <input type="text" name="id" value={post.id} className={styles.input} readOnly></input>
           <div>
             <Image src={post?.img ? post?.img : '/noavatar.png'} alt="" width={50} height={50} />
             <span>{post.title}</span>

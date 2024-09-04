@@ -5,7 +5,7 @@ import { connectToDB } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
 
-export const createPost = async (formData) => {
+export const createPost = async (previousState, formData) => {
     'use server'
     // const title = formData.get('title');
     // const desc = formData.get('desc');
@@ -13,14 +13,15 @@ export const createPost = async (formData) => {
     // const slug = formData.get('slug');
 
     // Or we can use {}
-    const { title, desc, userId, slug } = Object.fromEntries(formData);
+    const { title, desc, userId, slug, img } = Object.fromEntries(formData);
     connectToDB()
     try {
         const newPost = new Post({
             title: title,
             desc: desc,
             userId: userId,
-            slug
+            slug,
+            img
         })
         await newPost.save()
         console.log('Save to DB');
@@ -28,6 +29,7 @@ export const createPost = async (formData) => {
         revalidatePath('/blog')
     } catch (error) {
         console.log(error);
+        return { error: error.message }
     }
 
     //console.log(title, desc, userId, slug );
@@ -146,7 +148,7 @@ export const deleteUser = async (formData) => {
     connectToDB()
     try {
         // delete user'post
-        await Post.deleteMany({userId: id})
+        await Post.deleteMany({ userId: id })
 
         await User.findByIdAndDelete(id)
         console.log('Delete user from DB');
