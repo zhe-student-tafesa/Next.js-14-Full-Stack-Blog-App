@@ -109,7 +109,8 @@ export const handleLoginWithCredentials = async (previousState, formData) => {
 
 }
 
-export const createUser = async (formData) => {
+export const createUser = async (previousState, formData) => {
+    ///export const createUser = async (formData) => {
     'use server'
 
     const { username, email, password, passwordrepeat, img, isAdmin } = Object.fromEntries(formData);
