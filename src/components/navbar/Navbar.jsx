@@ -6,8 +6,12 @@ import { auth } from '@/lib/auth'
 
 const Navbar = async () => {
   const session = await auth();
-  console.log(session)
-  
+  // because in auth.config.js: user in jwt is undefine, so add this
+  if (session?.user) {
+    session.user.isAdmin = session?.user?.email === process.env.ADMIN_ACCOUNT;
+  }
+  console.log("page session isAdmin", session)
+
   return (
     <div className={styles.container}>
       <Link href='/' className={styles.logo}>

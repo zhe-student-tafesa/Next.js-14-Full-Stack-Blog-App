@@ -79,7 +79,7 @@ const login = async (credentials) => {
         }
         // compare
         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
-        console.log("isPasswordCorrect: ", isPasswordCorrect)
+        // console.log("isPasswordCorrect: ", isPasswordCorrect)
         if (!isPasswordCorrect) {
             //throw new Error('Credentials not correct')
             return { error: 'Credentials are not correct' }
