@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styles from "./admin.module.css";
 import AdminUser from '@/components/adminUser/AdminUser';
 import AdminUserForm from '@/components/adminUserForm/AdminUserForm';
@@ -14,11 +14,21 @@ const AdminPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerPost}>
-        <AdminPost />
-        <AdminPostForm />
+        <div className={styles.postList}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminPost />
+          </Suspense>
+        </div>
+        <AdminPostForm className={styles.postForm} />
       </div>
+
+
       <div className={styles.containerUser}>
-        <AdminUser />
+        <div className={styles.nameList}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminUser />
+          </Suspense>
+        </div>
         <AdminUserForm />
       </div>
     </div>

@@ -14,7 +14,7 @@ const AdminPostForm = () => {
       <input type="text" name="userId" placeholder="user Id"></input>
       <input type="text" name="slug" placeholder="slug"></input>
       <button>Create Post</button>
-      {state?.error && state?.error}
+      {state?.error && state.error}
     </form>
   )
 }

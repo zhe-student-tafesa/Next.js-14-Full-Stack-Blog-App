@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 100px;
@@ -9,7 +9,26 @@
     gap: 50px;
 }
 
+
 .containerPost {
     display: flex;
     gap: 50px;
+}
+
+.postList {
+    flex: 1;
+}
+
+.nameList {
+    flex: 1;
+}
+
+
+@media (max-width: 768px) {
+    .containerPost {
+        flex-direction: column;
+    }
+    .containerUser {
+        flex-direction: column;
+    }
 }
