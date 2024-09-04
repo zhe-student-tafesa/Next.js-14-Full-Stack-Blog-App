@@ -1,0 +1,29 @@
+.container {
+   
+}
+.containerOnePost{
+ display: flex;
+ /* important */
+ justify-content: space-between;
+ align-items: center;
+ margin: 20px 0px;
+}
+
+.input {
+   display:none;
+}
+
+.imgAndTitle{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+.button {
+   width: 100px;
+   padding: 5px 10px;
+   background-color: rgba(220, 20, 60, 0.593);
+   color: var(--textColor);
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}

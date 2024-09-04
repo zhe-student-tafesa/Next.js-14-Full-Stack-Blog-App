@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.containerUser {
+    display: flex;
+    gap: 80px;
+}
+
+
+.containerPost {
+    display: flex;
+    gap: 80px;
+}
+
+.postList {
+    flex: 1;
+}
+
+.nameList {
+    flex: 1;
+}
+
+
+
+
+/* class + tag: selector */
+.container img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .containerPost {
+        flex-direction: column;
+    }
+
+    .containerUser {
+        flex-direction: column;
+    }
+}

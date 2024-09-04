@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.containerOneUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input {
+    display: none;
+}
+
+.imgAndName{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    width: 100px;
+    height: 25px;
+    padding: 5px 10px;
+    background-color: rgba(220, 20, 60, 0.593);
+    color: var(--textColor);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+ }
