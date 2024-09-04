@@ -16,7 +16,7 @@ const AdminPost = async () => {
         <form key={post.id} className={styles.containerOnePost} action={deletePost}>
           <input type="text" name="id" value={post.id} className={styles.input} readOnly></input>
           <div className={styles.imgAndTitle}>
-            <Image src={post?.img ? post?.img : '/noavatar.png'} alt="" width={50} height={50} />
+            <Image src={post?.img ? post?.img : 'https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg'} alt="" width={50} height={50} />
             <span>{post.title}</span>
           </div>
           <button className={styles.button}>delete</button>
