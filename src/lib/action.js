@@ -107,3 +107,52 @@ export const handleLoginWithCredentials = async (previousState, formData) => {
 
 }
 
+export const createUser = async (formData) => {
+    'use server'
+
+    const { username, email, password, passwordrepeat, img, isAdmin } = Object.fromEntries(formData);
+    if (password != passwordrepeat) {
+        return { error: 'Password not match' }
+    }
+    try {
+        connectToDB()
+        // if existed user
+        const user = await User.findOne({ username: username })
+        if (user) {
+            return { error: 'Account already  exist' };
+        }
+        // create
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        const newUser = new User({
+            username: username,
+            password: hashedPassword,
+            img,
+            email,
+            isAdmin,
+        });
+        await newUser.save();
+        revalidatePath("/admin");
+        return { success: true }
+    } catch (error) {
+        console.log(error)
+        return { error: 'Create new user failed' }
+    }
+}
+
+export const deleteUser = async (formData) => {
+    'use server'
+    const { id } = Object.fromEntries(formData);
+    connectToDB()
+    try {
+        // delete user'post
+        await Post.deleteMany({userId: id})
+
+        await User.findByIdAndDelete(id)
+        console.log('Delete user from DB');
+        revalidatePath('/admin')
+    } catch (error) {
+        console.log(error);
+    }
+}
+
