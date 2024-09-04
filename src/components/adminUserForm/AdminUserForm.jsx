@@ -9,6 +9,7 @@ const AdminUserForm = () => {
   const [state, formAction] = useFormState(createUser, undefined);
   return (
     <form className={styles.container} action={formAction}>
+      <h1>Add New User</h1>
       <input type="text" name="username" placeholder="user name"></input>
       <input type="password" name="password" placeholder="password"></input>
       <input type="password" name="passwordrepeat" placeholder="password again"></input>

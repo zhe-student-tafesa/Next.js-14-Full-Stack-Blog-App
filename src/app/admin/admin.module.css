@@ -1,18 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 120px;
 }
 
 .containerUser {
     display: flex;
-    gap: 50px;
+    gap: 80px;
 }
 
 
 .containerPost {
     display: flex;
-    gap: 50px;
+    gap: 80px;
 }
 
 .postList {
