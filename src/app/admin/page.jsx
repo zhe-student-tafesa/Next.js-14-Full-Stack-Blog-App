@@ -13,15 +13,14 @@ export const metadata = {
 const AdminPage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.containerUser}>
-        <AdminUser />
-        <AdminUserForm />
-      </div>
       <div className={styles.containerPost}>
         <AdminPost />
         <AdminPostForm />
       </div>
-
+      <div className={styles.containerUser}>
+        <AdminUser />
+        <AdminUserForm />
+      </div>
     </div>
   )
 }

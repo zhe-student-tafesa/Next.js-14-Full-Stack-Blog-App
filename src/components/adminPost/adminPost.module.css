@@ -1,3 +1,11 @@
 .container {
-   background-color: aquamarine; 
+   
+}
+.containerOnePost{
+ display: flex;
+ justify-content: space-around;
+}
+
+.input {
+   display:none;
 }
