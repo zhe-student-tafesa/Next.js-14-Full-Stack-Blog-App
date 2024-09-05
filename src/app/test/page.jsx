@@ -2,7 +2,7 @@
 import React from 'react'
 
 const deletePostUseOwnAPI = async (slug) => {
-    const singlePostUrl = (process.env.HOST_URL || process.env.VERCEL_URL) + '/api/blog';
+    const singlePostUrl = (process.env.HOST_URL || process.env.VERCEL_URL_V1) + '/api/blog';
     try {
         const response = await fetch(`${singlePostUrl}/${slug}`, {
             method: 'DELETE',

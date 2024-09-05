@@ -17,7 +17,7 @@ const getData = async () => {
 };
 
 const getDataUseOurAPI = async () => {
-  const postUrl = (process.env.HOST_URL || process.env.VERCEL_URL) + '/api/blog';
+  const postUrl = (process.env.HOST_URL || process.env.VERCEL_URL_V1) + '/api/blog';
   const result = await fetch(postUrl, {
     cache: "force-cache",
   });
