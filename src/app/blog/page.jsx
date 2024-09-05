@@ -17,7 +17,8 @@ const getData = async () => {
 };
 
 const getDataUseOurAPI = async () => {
-  const result = await fetch("http://localhost:3000/api/blog", {
+  const postUrl = (process.env.HOST_URL || `https://${process.env.VERCEL_URL}`) + '/api/blog';
+  const result = await fetch(postUrl, {
     cache: "force-cache",
   });
   if (!result.ok) {

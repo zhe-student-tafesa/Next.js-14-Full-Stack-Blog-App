@@ -16,8 +16,9 @@ const getData = async (slug) => {
 };
 
 const getDataUsingOwnAPI = async (slug) => {
+  const singlePostUrl = (process.env.HOST_URL || `https://${process.env.VERCEL_URL}`) + '/api/blog/' + slug;
   const result = await fetch(
-    "http://localhost:3000/api/blog/" + slug
+    singlePostUrl
   );
   if (!result.ok) {
     throw new Error("error in single blog page fetching data");
