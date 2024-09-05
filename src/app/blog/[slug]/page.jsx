@@ -16,7 +16,7 @@ const getData = async (slug) => {
 };
 
 const getDataUsingOwnAPI = async (slug) => {
-  const singlePostUrl = (process.env.HOST_URL || `https://${process.env.VERCEL_URL}`) + '/api/blog/' + slug;
+  const singlePostUrl = (process.env.HOST_URL || process.env.VERCEL_URL) + '/api/blog/' + slug;
   const result = await fetch(
     singlePostUrl
   );
