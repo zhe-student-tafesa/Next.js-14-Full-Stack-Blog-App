@@ -17,9 +17,11 @@ const getData = async () => {
 };
 
 const getDataUseOurAPI = async () => {
-  const postUrl = (process.env.HOST_URL || process.env.VERCEL_URL_V1) + '/api/blog';
+  const postUrl =
+    (process.env.HOST_URL || process.env.VERCEL_URL_V1) + "/api/blog";
   const result = await fetch(postUrl, {
     cache: "force-cache",
+    credentials: "include",
   });
   if (!result.ok) {
     throw new Error("error in blog page fetching data use own API");
@@ -28,14 +30,14 @@ const getDataUseOurAPI = async () => {
 };
 
 export const metadata = {
-  title: 'Blog Page',
-  description: 'Blog Page Description',
-}
+  title: "Blog Page",
+  description: "Blog Page Description",
+};
 
 const BlogPage = async () => {
   // use API to fetch data
   // const posts = await getData();
-  const posts = await getDataUseOurAPI()
+  const posts = await getDataUseOurAPI();
 
   // !!! use DATA.js to fetch data
   //  const posts = await getPosts();
