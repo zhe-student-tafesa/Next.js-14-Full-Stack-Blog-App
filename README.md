@@ -15,6 +15,8 @@
 # SignIn with credentials
 # useFormState: https://fa.react.dev/reference/react-dom/hooks/useFormState, handle form error
 # use middleware: only admin can visit admin page, only authed user can visit logout/blog/home, only unauthed user can visit login page 
+# /api/blog 401 error: caused by the "Vercel Authentication" from Project Settings. Once I disabled it, the whole project worked.
+# https://vercel.com/franks-projects-0c74f948/next-js-14-full-stack-blog-app/settings/deployment-protection
 
 
 

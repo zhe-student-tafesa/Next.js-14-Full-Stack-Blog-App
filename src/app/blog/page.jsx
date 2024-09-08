@@ -17,15 +17,13 @@ const getData = async () => {
 };
 
 const getDataUseOurAPI = async () => {
+  // only save HOST_URL in .env,
+  // save VERCEL_URL_V1 in vercel
   const postUrl =
     (process.env.HOST_URL || process.env.VERCEL_URL_V1) + "/api/blog";
-  const result = await fetch(
-    "https://next-js-14-full-stack-blog-oasn4qoab-franks-projects-0c74f948.vercel.app/api/blog",
-    {
-      cache: "force-cache",
-      credentials: "include",
-    }
-  );
+  const result = await fetch(postUrl, {
+    cache: "force-cache",
+  });
   if (!result.ok) {
     throw new Error("error in blog page fetching data use own API");
   }
