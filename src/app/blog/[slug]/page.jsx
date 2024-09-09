@@ -16,10 +16,9 @@ const getData = async (slug) => {
 };
 
 const getDataUsingOwnAPI = async (slug) => {
-  const singlePostUrl = (process.env.HOST_URL || process.env.VERCEL_URL_V1) + '/api/blog/' + slug;
-  const result = await fetch(
-    singlePostUrl
-  );
+  const singlePostUrl =
+    (process.env.HOST_URL || process.env.VERCEL_URL_V1) + "/api/blog/" + slug;
+  const result = await fetch(singlePostUrl);
   if (!result.ok) {
     throw new Error("error in single blog page fetching data");
   }
@@ -32,8 +31,8 @@ export const generateMetadata = async ({ params }) => {
   return {
     title: post.title,
     description: post.desc,
-  }
-}
+  };
+};
 
 const SingleBlogPage = async ({ params }) => {
   // !!! {slug} = params;
@@ -53,7 +52,11 @@ const SingleBlogPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src={post.img ? post.img : "https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"}
+          src={
+            post.img
+              ? post.img
+              : "https://staging.miningskills.com.au/wp-content/uploads/2024/05/Post-6.jpg"
+          }
           className={styles.imgFeatured}
           alt=""
           fill
@@ -62,14 +65,15 @@ const SingleBlogPage = async ({ params }) => {
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detailContainer}>
-
           <Suspense fallback={<div>Loading......</div>}>
             <PostUser userId={post.userId} />
           </Suspense>
 
           <div className={styles.detail}>
             <p className={styles.detailTitle}>Published</p>
-            <p className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</p>
+            <p className={styles.detailValue}>
+              {post.createdAt.toString().slice(0, 10)}
+            </p>
           </div>
         </div>
 
