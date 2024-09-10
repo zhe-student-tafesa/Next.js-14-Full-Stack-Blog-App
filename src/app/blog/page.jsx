@@ -19,8 +19,10 @@ const getData = async () => {
 const getDataUseOurAPI = async () => {
   // only save HOST_URL in .env,
   // save VERCEL_URL_V1 in vercel
-  const postUrl =
-    (process.env.HOST_URL || process.env.VERCEL_URL_V1) + "/api/blog";
+  /// VERCEL_URL: domain name of the generated deployment URL. Example: *.vercel.app. The value does not include the protocol scheme  https://
+  // const postUrl =
+  //   (process.env.HOST_URL || process.env.VERCEL_URL_V1) + "/api/blog";
+  const postUrl = (process.env.HOST_URL || `https://${process.env.VERCEL_URL}`) + '/api/blog';
   const result = await fetch(postUrl, {
     cache: "no-store",
   });
