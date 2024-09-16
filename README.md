@@ -1,3 +1,11 @@
+![img-01-Project Folder Structure](https://github.com/user-attachments/assets/aab5ab70-dab2-40f9-b61c-cbe6f89d2ff0)
+![img-02-layout-desktop](https://github.com/user-attachments/assets/40d1a444-b1a4-4d5a-a0b1-5049b04b5ccb)
+![img-02-layout-mobile](https://github.com/user-attachments/assets/613196f9-073f-41e3-8398-d9b5fe49c8e1)
+![img-03-github-login](https://github.com/user-attachments/assets/d5aedb92-b282-4e48-b2ba-8989e2029243)
+![img-04-credential-login](https://github.com/user-attachments/assets/defc9998-1d8d-4ad3-9629-61b14b49301b)
+![img-05-only-admin-admin-page](https://github.com/user-attachments/assets/df7107bd-fca1-4fd8-8818-5efed9b447b1)
+![img-06-mongodb-DB](https://github.com/user-attachments/assets/150b217a-f753-43a6-86c5-121f71ce7a58)
+![img-07-deploy](https://github.com/user-attachments/assets/64516d28-8855-4368-af4b-8e26b301a720)
 # Next.js-14-Full-Stack-Blog-App
 #  "next": "14.0.4"
 # npx create-next-app@14.0.4 .
